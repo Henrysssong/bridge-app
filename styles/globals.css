@@ -5,3 +5,95 @@ body {
   color: white;
   background-color: black;
 }
+
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 200vh; /* Double the viewport height */
+  overflow: hidden; /* Prevent manual scrolling */
+}
+
+/* Header styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333; 
+  color: white;
+  position: fixed; /* Keeps the header fixed on top */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10; /* Keeps the header above other content */
+  opacity: 0;
+  transform: translateY(-100%); /* Starts off-screen */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.header.active {
+  opacity: 1;
+  transform: translateY(0); /* Moves onto screen */
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Title styling */
+.title {
+  text-align: center;
+  margin-top: 50vh; /* Centers title vertically in the first viewport */
+  transform: translateY(-50%); /* Additional centering adjustment */
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.title.active {
+  opacity: 1;
+}
+
+/* Main content styling */
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Takes up second viewport */
+  margin-top: 100vh; /* Pushes to second viewport */
+}
+
+.applicant, .employee {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 45%;
+  border: 1px solid #555;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.applicant img, .employee img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Media Query for Mobile Screens */
+@media only screen and (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .applicant, .employee {
+    width: 90%;
+  }
+
+  .title {
+    font-size: 1.2rem; /* Adjusting font size for mobile */
+  }
+}

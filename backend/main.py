@@ -1,7 +1,10 @@
-from fastapi import FastAPI
+from databases import Database
+from sqlalchemy import create_engine, MetaData
 
-app = FastAPI()
+DATABASE_URL = "YOUR_HEROKU_POSTGRESQL_URL"  # Replace with your Heroku PostgreSQL URL
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+database = Database(DATABASE_URL)
+metadata = MetaData()
+
+engine = create_engine(DATABASE_URL)
+
