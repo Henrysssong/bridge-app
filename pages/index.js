@@ -5,10 +5,15 @@ import { useEffect } from 'react';
 export default function Home() {
   useEffect(() => {
     setTimeout(() => {
+      const titleElem = document.querySelector(`.${styles.title}`);
       const headerElem = document.querySelector(`.${styles.header}`);
       const mainElem = document.querySelector(`.${styles.main}`);
       const footerElem = document.querySelector(`.${styles.footer}`);
-     
+      
+      if (titleElem) {
+        titleElem.classList.add("active");
+      }
+      
       if (headerElem) {
         headerElem.classList.add("active");
         setTimeout(() => {
