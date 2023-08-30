@@ -23,18 +23,18 @@ export default function Home() {
               if (footerElem) {
                 footerElem.classList.add("active");
               }
-            }, 300);
+            }, 1000);
           }
-        }, 300);
+        }, 1000);
       }
-    }, 300);
+    }, 1000);
   }, []);
 
   return (
     <div className={styles.container}>
       <header className={styles.header}>
         <div>
-          <img src="/logo-placeholder.png" alt="Logo" />   {/* You can replace this with your logo once it's ready */}
+          <img src="/logo-placeholder.png" alt="Logo" />
         </div>
         <nav>
           <Link href="/about">About</Link>

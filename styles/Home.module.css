@@ -164,3 +164,22 @@
     filter: invert(1);
   }
 }
+/* Ensure the container for the title and headers occupies the full viewport height */
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* This will vertically center the title */
+  align-items: center;
+}
+
+/* Adjust the main content to center the portal blocks */
+.main {
+  min-height: 100vh; /* This ensures the main content occupies the full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* This will vertically center the portal blocks */
+  align-items: center;
+  opacity: 0;
+  transition: opacity 1s ease-in 1s;
+}
