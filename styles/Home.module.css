@@ -166,7 +166,7 @@
 }
 /* Ensure the container for the title and headers occupies the full viewport height */
 .container {
-  min-height: 100vh;
+  height: 100vh;  /* Change from min-height to height */
   display: flex;
   flex-direction: column;
   justify-content: center; /* This will vertically center the title */
@@ -175,7 +175,7 @@
 
 /* Adjust the main content to center the portal blocks */
 .main {
-  min-height: 100vh; /* This ensures the main content occupies the full viewport height */
+  height: 100vh;  /* Change from min-height to height */
   display: flex;
   flex-direction: column;
   justify-content: center; /* This will vertically center the portal blocks */

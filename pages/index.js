@@ -34,7 +34,7 @@ export default function Home() {
     <div className={styles.container}>
       <header className={styles.header}>
         <div>
-          <img src="/logo-placeholder.png" alt="Logo" />
+          <img src="logo1.png" alt="Logo" />
         </div>
         <nav>
           <Link href="/about">About</Link>
